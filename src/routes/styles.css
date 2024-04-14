@@ -1,0 +1,112 @@
+@import '@fontsource/fira-mono';
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 700;
+	font-display: swap;
+	src: local('Pretendard Bold'), url(../lib/fonts/Pretendard-Bold.subset.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 500;
+	font-display: swap;
+	src: local('Pretendard Medium'), url(../lib/fonts/Pretendard-Medium.subset.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 400;
+	font-display: swap;
+	src: local('Pretendard Regular'), url(../lib/fonts/Pretendard-Regular.subset.woff) format('woff');
+}
+
+body {
+	background-color: black;
+	color: white;
+	margin: 0 auto;
+	overflow: auto;
+}
+
+.hrLine {
+	display: flex;
+}
+.flexLineContainer{
+	display: flex;
+	width: 100%;
+}
+.iconStyle {
+	width: 26px;
+	height: 26px;
+}
+.SmallIconStyle {
+	width: 24px;
+	height: 24px;
+}
+.bouncy {
+	animation: bounce 2s ease-in-out infinite;
+}
+.title {
+	display: flex;
+	width: 100%;
+	align-items: center;
+	gap:18px
+}
+.smallTitle {
+	display: flex;
+	width: 100%;
+	align-items: center;
+	gap:6px
+}
+.title-tile-1 {
+	display: flex;
+	width: 42px;
+	height: 42px;
+	background-color: #FFE53B;background-image: linear-gradient(220deg, rgb(201 190 120) 0%, rgb(235 117 117) 74%);
+	transition: width 0.5s ease-in-out;
+}
+.title-small-title {
+	display: flex;
+	width: 24px;
+	height: 24px;
+	background-color: #FFE53B;background-image: linear-gradient(220deg, rgb(201 190 120) 0%, rgb(235 117 117) 74%);
+	transition: width 0.5s ease-in-out;
+}
+.title-tile-action {
+	width: 126px;
+}
+.title > h1 {
+	margin: 0;
+}
+.stackIcon {
+	width: 1.5em;
+	height: 1.5em;
+	transition: all 0.5s;
+}
+.blockSubTitle{
+	font-family: 'Pretendard', serif;
+	font-weight: 700;
+	width: 100%;
+}
+
+@keyframes flyIn {
+	0% {
+		transform: translateX(500px); /* 시작 위치를 왼쪽으로 100픽셀 이동 */
+		opacity: 0; /* 시작 투명도를 0으로 설정 */
+	}
+	100% {
+		transform: translateX(0); /* 최종 위치를 원래 위치로 설정 */
+		opacity: 1; /* 최종 투명도를 1로 설정 */
+	}
+}
+
+@keyframes bounce {
+	0% {
+		bottom:40px;
+	}
+	50% {
+		bottom:20px;
+	}
+	100% {
+		bottom:40px;
+	}
+}
