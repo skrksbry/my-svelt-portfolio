@@ -158,7 +158,7 @@ onMount(()=>{
 			<span class="blockSubTitle">Frontend</span>
 			<SkillComponent stackName="Typescript" stackIconName="Typescript" stackColor="#3178C6" />
 			<SkillComponent stackName="Javascript" stackIconName="Javascript" stackColor="#F7DF1E"/>
-			<SkillComponent stackName="NextJs" stackIconName="NextJs" stackColor="#000000"/>
+			<SkillComponent stackName="Next.js" stackIconName="NextJs" stackColor="#000000"/>
 			<SkillComponent stackName="React" stackIconName="React" stackColor="#61DAFB"/>
 			<SkillComponent stackName="React-Native" stackIconName="React" stackColor="#61DAFB"/>
 			<SkillComponent stackName="Electron" stackIconName="Electron" stackColor="#47848F"/>
@@ -166,12 +166,14 @@ onMount(()=>{
 			<SkillComponent stackName="Recoil" stackIconName="Recoil" stackColor="#3578E5"/>
 			<SkillComponent stackName="Svelte" stackIconName="Svelte" stackColor="#FF3E00"/>
 			<span class="blockSubTitle fontLight">Backend</span>
-			<SkillComponent stackName="NodeJS" stackIconName="NodeJs" stackColor="#339933"/>
-			<SkillComponent stackName="NestJS" stackIconName="NestJs" stackColor="#E0234E"/>
+			<SkillComponent stackName="Node.js" stackIconName="NodeJs" stackColor="#339933"/>
+			<SkillComponent stackName="Nest.js" stackIconName="NestJs" stackColor="#E0234E"/>
 			<SkillComponent stackName="Socket.io" stackIconName="SocketIo" stackColor="#010101"/>
 			<SkillComponent stackName="Mysql / RDBMS" stackIconName="MySQL" stackColor="#4479A1"/>
 			<SkillComponent stackName="MongoDB" stackIconName="MongoDB" stackColor="#47A248"/>
 			<SkillComponent stackName="Redis" stackIconName="Redis" stackColor="#DC382D"/>
+			<SkillComponent stackName="PHP" stackIconName="Php" stackColor="#777BB4"/>
+			<SkillComponent stackName="CloudFlare" stackIconName="CloudFlare" stackColor="#F38020"/>
 			<span class="blockSubTitle fontLight">Infra</span>
 			<SkillComponent stackName="Oracle Cloud" stackIconName="Oracle" stackColor="#F80000"/>
 			<SkillComponent stackName="Amazon Web Service" stackIconName="Aws" stackColor="#FF9900"/>
@@ -179,6 +181,7 @@ onMount(()=>{
 			<SkillComponent stackName="Jenkins" stackIconName="Jenkins" stackColor="#D24939"/>
 			<SkillComponent stackName="Git / Github Action" stackIconName="Github" stackColor="#181717"/>
 			<SkillComponent stackName="Vercel" stackIconName="Vercel" stackColor="#000000"/>
+			<SkillComponent stackName="NginX" stackIconName="Nginx" stackColor="#009639"/>
 			<span class="blockSubTitle fontLight">UI</span>
 			<SkillComponent stackName="TailwindCSS" stackIconName="TailwindCss" stackColor="#06B6D4"/>
 			<SkillComponent stackName="Styled-Component" stackIconName="StyledComponent" stackColor="#DB7093"/>
@@ -196,24 +199,34 @@ onMount(()=>{
 			<p style="color:#999999;margin:5px 0px 5px 0px;">소프트웨어팀 / 대리</p>
 			<p style="color:#999999;margin:0;font-size: 12px">2021년 11월 03일 ~ 2023년 08월 01일 ( 2년 9개월 )</p>
 			<p>웹 어플리케이션 및 키오스크 개발</p>
-			<li>웹 기반 신규 키오스크 서비스 개발</li>
-			<li>키오스크 / 지점 관리용 백 오피스 개발</li>
-			<li>키오스크및 백오피스와 하드웨어 네트워크 통합</li>
+			<ul>
+				<li>웹 기반 신규 키오스크 서비스 개발</li>
+				<li>키오스크 / 지점 관리용 백 오피스 개발</li>
+				<li>키오스크및 백오피스와 하드웨어 네트워크 통합</li>
+			</ul>
 			<p>서비스 백엔드 및 DB 개발업무</p>
-			<li>Node.js 기반 백엔드 ( RESTful / TCP Socket ) 개발</li>
-			<li>전체 서비스 RDBMS 설계 및 운용</li>
+			<ul>
+				<li>Node.js 기반 백엔드 ( RESTful / TCP Socket ) 개발</li>
+				<li>전체 서비스 RDBMS 설계 및 운용</li>
+			</ul>
 			<p>인프라 전환 및 관리</p>
-			<li>온-프레미스 환경 (VMware ESXi)에서 클라우드 환경 ( Oracle Cloud Infrastructure ) 으로 환경 전환 책임 주도</li>
+			<ul>
+				<li>온-프레미스 환경 (VMware ESXi)에서 클라우드 환경 ( Oracle Cloud Infrastructure ) 으로 환경 전환 책임 주도</li>
+			</ul>
 		</div>
 		<div style="width: 100%">
 			<h3 style="width: 100%;margin:0;">(주) 씨에스에스</h3>
 			<p style="color:#999999;margin:5px 0px 5px 0px;">시스템개발팀 / Senior Associate</p>
 			<p style="color:#999999;margin:0;font-size: 12px">2023년 8월 05일 ~ 2024년 05월 08일 ( 9개월 )</p>
 			<p>웹 서비스 개발</p>
-			<li>Satella 서비스 신규개발 및 유지보수 업무</li>
+			<ul>
+				<li>Satella 서비스 신규개발 및 유지보수 업무</li>
+			</ul>
 			<p>인프라 관리 및 최적화</p>
-			<li>Jenkins를 통한 CI/CD 파이프라인 구축 및 자동화</li>
-			<li>AWS 클라우드 인프라 최적화 및 이중화 구조 구현</li>
+			<ul>
+				<li>Jenkins를 통한 CI/CD 파이프라인 구축 및 자동화</li>
+				<li>AWS 클라우드 인프라 최적화 및 이중화 구조 구현</li>
+			</ul>
 		</div>
 	</div>
 </section>
@@ -222,8 +235,150 @@ onMount(()=>{
 		<div class="title">
 			<div class="title-tile-1" id="title3" class:title-tile-action={itemVisible[2]} /><h1 style="font-size: 46px">PROJECT</h1>
 		</div>
-		<div>
+		<div style="width: 100%;display: flex;gap: 24px;">
+			<div style="width: 300px;height: 300px;background-color: gray;min-width: 300px"></div>
+			<div style="display: flex;align-items: flex-start;flex-wrap: wrap;align-content: flex-start">
+				<h1 style="width: 100%">포트폴리오 프로젝트</h1>
+				<div style="display: flex;gap:5px; width: 100%">
+					<SkillComponent stackName="Svelte" stackIconName="Svelte" stackColor="#FF3E00"/>
+					<SkillComponent stackName="Vercel" stackIconName="Vercel" stackColor="#000000"/>
+					<SkillComponent stackName="CloudFlare" stackIconName="CloudFlare" stackColor="#F38020"/>
+				</div>
+				<p style="margin:10px 0 10px 0;width: 100%;white-space: pre">
+					{`포트폴리오를 문서로 관리하고 있었지만 이번에는 웹에 공개해보자는 목적에서 시작했습니다.`}
+					{`\n포트폴리오 서비스는 작고 가볍기 때문에 최근 관심있게 공부하던 Svelte를 적극적으로 사용하였습니다.`}
+					{`\n또한 정적 페이지인 만큼 Vercel을 통해 배포하고 CloudFlare Proxy를 적용하였습니다.`}
+				</p>
+				<ul>
+					<li>처음부터 끝까지 Svelte를 적용하여 개발하였습니다.</li>
+					<li>Vercel을 통해 배포하고, CloudFlare Proxy를 사용하였습니다.</li>
+				</ul>
+			</div>
+		</div>
+		<div style="width: 100%;display: flex;gap: 24px;">
+			<div style="width: 300px;height: 300px;background-color: gray;min-width: 300px"></div>
+			<div style="display: flex;align-items: flex-start;flex-wrap: wrap;align-content: flex-start">
+				<h1 style="width: 100%;">개인 블로그 프로젝트</h1>
 
+				<div style="display: flex;gap:5px; width: 100%;flex-wrap: wrap;">
+					<SkillComponent stackName="Next.js 14" stackIconName="NextJs" stackColor="#000000"/>
+					<SkillComponent stackName="Docker" stackIconName="Docker" stackColor="#2496ED"/>
+					<SkillComponent stackName="Oracle Cloud" stackIconName="Oracle" stackColor="#F80000"/>
+					<SkillComponent stackName="Nest.js" stackIconName="NestJs" stackColor="#E0234E"/>
+					<SkillComponent stackName="MariaDB" stackIconName="MySQL" stackColor="#4479A1"/>
+					<SkillComponent stackName="Redis" stackIconName="Redis" stackColor="#DC382D"/>
+					<SkillComponent stackName="TailwindCSS" stackIconName="TailwindCss" stackColor="#06B6D4"/>
+					<SkillComponent stackName="CloudFlare" stackIconName="CloudFlare" stackColor="#F38020"/>
+				</div>
+				<p style="margin:10px 0 10px 0;width: 100%;white-space: pre">
+					{`티스토리를 사용하던 중, 블로그의 디자인을 깔끔하게 만들고 초기 로딩시간을 최대한 줄이고 싶다는 생각이 들었습니다.`}
+					{`\n그러던 와중 React 18의 RSC / RCC에 흥미가 생겨 블로그를 제작하기로 결정하였습니다.\n`}
+					{`\nRSC를 적극적으로 도입해 향후 React의 방향성에 대해 알아볼 수 있었고 만족스러운 초기 로딩속도와 디자인을 제작할 수 있었습니다.`}
+				</p>
+				<ul>
+					<li>Nest.js와 Java Spring 을 모두 사용해보는 기회가 되었습니다.</li>
+					<li>Nest.js에서 ORM을 사용하여 DB를 생성하였습니다.</li>
+					<li>Next 14 / React 18 버전의 RSC와 RCC그리고 SSR을 적절하게 사용하여 개발하였습니다.</li>
+					<li>깔끔한 디자인과 빠른 속도를 핵심 가치로 목표하고 개발하였습니다.</li>
+				</ul>
+			</div>
+		</div>
+		<div style="width: 100%;display: flex;gap: 24px;">
+			<div style="width: 300px;height: 300px;background-color: gray;min-width: 300px"></div>
+			<div style="display: flex;align-items: flex-start;flex-wrap: wrap;align-content: flex-start">
+				<h1 style="width: 100%">Satella</h1>
+				<div style="display: flex;gap:5px; width: 100%;flex-wrap: wrap;">
+					<SkillComponent stackName="Next.js" stackIconName="NextJs" stackColor="#000000"/>
+					<SkillComponent stackName="Docker" stackIconName="Docker" stackColor="#2496ED"/>
+					<SkillComponent stackName="Jenkins" stackIconName="Jenkins" stackColor="#D24939"/>
+					<SkillComponent stackName="AWS" stackIconName="Aws" stackColor="#FF9900"/>
+					<SkillComponent stackName="ReactQuery" stackIconName="ReactQuery" stackColor="#FF4154"/>
+					<SkillComponent stackName="Recoil" stackIconName="Recoil" stackColor="#3578E5"/>
+				</div>
+				<p style="margin:10px 0 10px 0;width: 100%;white-space: pre">
+					{`(주)씨에스에스에서 개발한 서브컬쳐 플렛폼입니다.`}
+				</p>
+				<ul>
+					<li>Jenkins CI/CD 도입을 주도하여 작업하였으며, AWS EC2 인스턴스 최적화 및 이중화 작업을 수행했습니다.</li>
+					<li>Next.js 를 이용해 서비스의 신규 기능개발 및 기존 기능 고도화 작업을 진행했습니다.</li>
+				</ul>
+			</div>
+		</div>
+		<div style="width: 100%;display: flex;gap: 24px;">
+			<div class="projectImage" style="">
+				<div style="width: 300px;height: 300px;background-color: gray;min-width: 300px"></div>
+			</div>
+			<div style="display: flex;align-items: flex-start;flex-wrap: wrap;align-content: flex-start">
+				<h1 style="width: 100%">RITTO 키오스크 / 백오피스 서비스</h1>
+				<div style="display: flex;gap:5px; width: 100%;flex-wrap: wrap;">
+					<SkillComponent stackName="Next.js" stackIconName="NextJs" stackColor="#000000"/>
+					<SkillComponent stackName="React" stackIconName="React" stackColor="#61DAFB"/>
+					<SkillComponent stackName="Docker" stackIconName="Docker" stackColor="#2496ED"/>
+					<SkillComponent stackName="Recoil" stackIconName="Recoil" stackColor="#3578E5"/>
+					<SkillComponent stackName="Oracle Cloud" stackIconName="Oracle" stackColor="#F80000"/>
+					<SkillComponent stackName="TailwindCSS" stackIconName="TailwindCss" stackColor="#06B6D4"/>
+					<SkillComponent stackName="Electron" stackIconName="Electron" stackColor="#47848F"/>
+				</div>
+				<p style="margin:10px 0 10px 0;width: 100%;white-space: pre">
+					{`(주)아이에스컴퍼니 에서 개발한 키오스크 서비스 및 백오피스입니다.`}
+				</p>
+				<ul>
+					<li>Electron을 사용해 React / Next.js웹 앱을 어플리케이션형태로 배포하였습니다.</li>
+					<li>키오스크와 백엔드 서버간 Websocket을 통해 실시간 업데이트를 구현하였습니다.</li>
+					<li>UX에 관심을 가지고 고객 동향을 모니터링하여 UX 개선을 통해 불만을 크게 줄였습니다 (사용점주 포함).</li>
+					<li>온-프레미스 환경에서 클라우드 서비스인 OCI ( Oracle Cloud ) 로 전환을 통해 물리적 사고 위험을 낮추고 고가용성을 확보했습니다.</li>
+				</ul>
+			</div>
+		</div>
+		<div style="width: 100%;display: flex;gap: 24px;">
+			<div class="projectImage" style="">
+				<div style="width: 300px;height: 300px;background-color: gray;min-width: 300px"></div>
+			</div>
+			<div style="display: flex;align-items: flex-start;flex-wrap: wrap;align-content: flex-start">
+				<h1 style="width: 100%">RITTO 통합 제어 서버</h1>
+				<div style="display: flex;gap:5px; width: 100%;flex-wrap: wrap;">
+					<SkillComponent stackName="Node.js" stackIconName="NodeJs" stackColor="#339933"/>
+					<SkillComponent stackName="Docker" stackIconName="Docker" stackColor="#2496ED"/>
+					<SkillComponent stackName="Oracle Cloud" stackIconName="Oracle" stackColor="#F80000"/>
+					<SkillComponent stackName="MariaDB" stackIconName="MySQL" stackColor="#4479A1"/>
+					<SkillComponent stackName="Grpc" stackIconName="Grpc" stackColor="#000000"/>
+					<SkillComponent stackName="Redis" stackIconName="Redis" stackColor="#DC382D"/>
+				</div>
+				<p style="margin:10px 0 10px 0;width: 100%;white-space: pre">
+					{`(주)아이에스컴퍼니 에서 개발한 모든 주문 관련 서비스의 통합 백엔드 프로젝트 입니다.`}
+				</p>
+				<ul>
+					<li>온-프레미스 환경에서 클라우드 서비스인 OCI ( Oracle Cloud ) 로 전환을 통해 물리적 사고 위험을 낮추고 고가용성을 확보했습니다.</li>
+					<li>클라우드 환경으로 전환을 통해 컴퓨팅 인스턴스 뿐 아니라 DB 이중화를 진행했습니다.</li>
+					<li>Node.js를 사용함으로써 가벼우면서도 Scalable한 서버 노드를 개발하였습니다.</li>
+					<li>Grpc 도입을 통해 통신 오버헤드를 50% 이상 감소시키고 MCU와 직접 통신하며 발생하는 문제를 해결하였습니다.</li>
+					<li>Redis 도입을 통해 발생한 주문을 캐싱하여 DB 쿼리량을 크게 감소시켜 DB 부하 및 비용을 30% 이상 감소시켰습니다.</li>
+				</ul>
+			</div>
+		</div>
+		<div style="width: 100%;display: flex;gap: 24px;">
+			<div class="projectImage" style="">
+				<div style="width: 300px;height: 300px;background-color: gray;min-width: 300px"></div>
+			</div>
+			<div style="display: flex;align-items: flex-start;flex-wrap: wrap;align-content: flex-start">
+				<h1 style="width: 100%">댕댕베이스</h1>
+				<div style="display: flex;gap:5px; width: 100%;flex-wrap: wrap;">
+					<SkillComponent stackName="PHP" stackIconName="Php" stackColor="#777BB4"/>
+					<SkillComponent stackName="Redis" stackIconName="Redis" stackColor="#DC382D"/>
+					<SkillComponent stackName="MySQL" stackIconName="MySQL" stackColor="#4479A1"/>
+					<SkillComponent stackName="CentOS" stackIconName="CentOs" stackColor="#262577"/>
+					<SkillComponent stackName="Apache" stackIconName="Apache" stackColor="#D22128"/>
+				</div>
+				<p style="margin:10px 0 10px 0;width: 100%;white-space: pre">
+					{`소녀전선이라는 게임의 DB 사이트입니다, 당시 정보를 찾아볼 수 있는 사이트가 없어 군 복무중 개발하였습니다.\n`}
+					{`N54L 이라는 AMD 저전력 32bit 듀얼코어 프로세서에서 20000페이지 뷰라는 접속량 발생으로 인해 처음으로 Redis 도입을 진행한 프로젝트입니다.\n`}
+					{`DB의 보틀넥 현상에 대해 경험해볼 수 있는 좋은 기회가 되었습니다.`}
+				</p>
+				<ul>
+					<li>시간당 20000건의 트렌젝션 처리를 위해 Redis캐시를 도입하여 실제 요청 건수를 10% 수준으로 감소시켰습니다.</li>
+					<li>N54L의 성능적 한계를 체험했습니다.</li>
+				</ul>
+			</div>
 		</div>
 	</div>
 </section>
