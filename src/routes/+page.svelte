@@ -1,6 +1,6 @@
 <script lang="ts">
 import Line from "../components/Line.svelte";
-import { blur, fade } from 'svelte/transition';
+import { blur } from 'svelte/transition';
 import {onMount} from "svelte";
 import LineContainer from "../components/LineContainer.svelte";
 import GradientBackground from "../components/GradientBackground.svelte";
