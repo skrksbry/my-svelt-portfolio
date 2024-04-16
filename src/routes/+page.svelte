@@ -1,7 +1,7 @@
 <script lang="ts">
 import Line from "../components/Line.svelte";
 import { blur } from 'svelte/transition';
-import {onMount} from "svelte";
+import { onMount } from "svelte";
 import LineContainer from "../components/LineContainer.svelte";
 import GradientBackground from "../components/GradientBackground.svelte";
 import Icon from "../icons/Icon.svelte"
@@ -19,10 +19,19 @@ onMount(()=>{
 	setTimeout(()=>{backgroundVisual = true},1000);
 	observer = new IntersectionObserver((entries) => {
 		entries.forEach(entry => {
+			console.log(entry.intersectionRatio)
 			if(entry.target.getAttribute('id') === "title1"){
-				itemVisible[0] = entry.isIntersecting;
-			} else if(entry.target.getAttribute('id') === "title2"){
-				itemVisible[1] = entry.isIntersecting;
+				if(entry.intersectionRatio > 0.8) {
+					itemVisible[0] = entry.isIntersecting;
+				}else{
+					itemVisible[0] = false;
+				}
+			} else if(entry.target.getAttribute('id') === "title2" ){
+				if(entry.intersectionRatio > 0.8) {
+					itemVisible[1] = entry.isIntersecting;
+				}else{
+					itemVisible[1] = false;
+				}
 			} else if(entry.target.getAttribute('id') === "title3"){
 				itemVisible[2] = entry.isIntersecting;
 			}
@@ -30,7 +39,7 @@ onMount(()=>{
 	}, {
 		root: null,
 		rootMargin: '0px',
-		threshold: 0.1
+		threshold: [0.2,0.8]
 	});
 
 	ids.forEach(item => {
@@ -49,13 +58,12 @@ onMount(()=>{
 
 <svelte:head>
 	<title>Goh Jae Hyun</title>
-	<meta name="description" content="jaehyun`s portfolio web site" />
+	<meta name="description" content="portfolio web site" />
 </svelte:head>
 
 <section class="firstSection">
 	{#if visual}
 		<div class="sectionBlock">
-
 			<LineContainer>
 				<Line hrColor="#999999" hrWidth={14} hrHeight={14} hrWidthType="px" durationTime={1000} />
 				<Line hrColor="background-color: #FFE53B;background-image: linear-gradient(270deg, rgb(201 190 120) 0%, rgb(235 117 117) 74%);" hrWidth={150} hrHeight={14} durationTime={1250} />
@@ -84,12 +92,12 @@ onMount(()=>{
 				<Line hrColor="#999999" hrWidth={14} hrWidthType="px" hrHeight={14} durationTime={2500} />
 			</LineContainer>
 			<LineContainer tab={8}>
-				<p transition:blur={{delay:1700,duration:1000}} style="font-size: 42px;font-weight: 900;margin:0">안녕하세요,</p>
+				<p transition:blur={{delay:1700,duration:1000}} class="titleTypo">안녕하세요,</p>
 			</LineContainer>
 			<LineContainer tab={8}>
-				<p transition:blur={{delay:1900,duration:1000}} style="font-size: 42px;font-weight: 900;margin:0">FRONTEND</p>
-				<p transition:blur={{delay:2100,duration:1000}} style="font-size: 42px;font-weight: 900;margin:0">개발자</p>
-				<p transition:blur={{delay:2300,duration:1000}} style="font-size: 42px;font-weight: 900;margin:0">고재현입니다.</p>
+				<p transition:blur={{delay:1900,duration:1000}} class="titleTypo">FRONTEND</p>
+				<p transition:blur={{delay:2100,duration:1000}} class="titleTypo">개발자</p>
+				<p transition:blur={{delay:2300,duration:1000}} class="titleTypo">고재현입니다.</p>
 			</LineContainer>
 			<LineContainer tab={4}>
 			</LineContainer>
@@ -121,39 +129,41 @@ onMount(()=>{
 	{/if}
 	{#if backgroundVisual}
 		<GradientBackground />
-		<div style="background-color: rgba(0,0,0,0.75); width: 100%; height: 100%; z-index: 3; position:fixed;"></div>
+		<div class="backgroundBlackScreen"></div>
 	{/if}
 	{#if visual}
-		<div transition:blur="{{delay:2000,duration:2000}}" class="bouncy" style="position: absolute; width: 100%; display: flex; bottom: 40px;align-items: center;z-index: 4;flex-flow: column;opacity: 0.5">
-			<p style="margin:0;font-weight: 700;font-size: 10px">SCROLL</p>
+		<div transition:blur="{{delay:2000,duration:2000}}" class="bouncy">
+			<p>SCROLL</p>
 			<Icon IconName="DownArrow" className="iconStyle" fill="white" />
 		</div>
 	{/if}
 </section>
-<section style="padding-top: 56px;padding-bottom: 56px">
-	<div class="container" style="align-content: flex-start;margin-top:32px;gap:18px">
+<section>
+	<div class="container" id="title1">
 		<div class="title">
-			<div class="title-tile-1" id="title1" class:title-tile-action={itemVisible[0]} /><h1 style="font-size: 46px">INFORMATION</h1>
+			<div class="title-tile-1" class:title-tile-action={itemVisible[0]} /><h1 style="font-size: 46px">INFORMATION</h1>
 		</div>
-		<div style="width: 100%;display: flex; gap: 24px;flex-wrap: wrap">
-			<div style="width: 120px;height: 120px;border-radius: 200px;background-color: gray"></div>
-			<div style="display: flex;flex-wrap: wrap; align-content: center">
-				<p style="font-size: 36px;font-weight: 900;margin:0">고재현</p>
-				<p style="font-size: 14px;width: 100%;margin:0;color:#999999">1995. 10. 07</p>
-				<p style="font-size: 16px;width: 100%;margin:0;margin-top:6px">기술뿐 아니라 사용자 경험에 더욱 집중하여 누구나 사용하기 좋은 프로덕트를 만들기 위해 노력하는 개발자입니다.</p>
+		<div class="nameTagBox">
+			<div class="profileImage"></div>
+			<div class="profileBox">
+				<p class="name">고재현</p>
+				<p class="birthday">1995. 10. 07</p>
+				<p class="comment">기술뿐 아니라 사용자 경험에 더욱 집중하여 누구나 사용하기 좋은 프로덕트를 만들기 위해 노력하는 개발자입니다.</p>
 			</div>
 		</div>
-		<div style="width: 100%;display: flex; gap: 10px;flex-wrap: wrap">
-			<h1 style="width: 100%;margin:0;">CONTACT</h1>
+		<div class="contactBox">
+			<p>CONTACT</p>
 			<div class="smallTitle">
 <!--				<div class="title-small-title" />-->
-				<Icon IconName="Email" className="SmallIconStyle" fill="white" /><p style="font-size: 16px;margin:0">skrksbry@naver.com</p>
+				<Icon IconName="Email" className="SmallIconStyle" fill="white" />
+				<p>skrksbry@naver.com</p>
 			</div>
 			<div class="smallTitle">
-				<Icon IconName="Phone" className="SmallIconStyle" fill="white" /><p style="font-size: 16px;margin:0">010-8887-4615</p>
+				<Icon IconName="Phone" className="SmallIconStyle" fill="white" />
+				<p>010-8887-4615</p>
 			</div>
 		</div>
-		<div style="width: 100%;display: flex; gap: 12px;flex-wrap: wrap">
+		<div class="skillBox">
 			<h1 style="width: 100%;margin:0;">SKILL</h1>
 			<span class="blockSubTitle">Frontend</span>
 			<SkillComponent stackName="Typescript" stackIconName="Typescript" stackColor="#3178C6" />
@@ -165,7 +175,7 @@ onMount(()=>{
 			<SkillComponent stackName="ReactQuery" stackIconName="ReactQuery" stackColor="#FF4154"/>
 			<SkillComponent stackName="Recoil" stackIconName="Recoil" stackColor="#3578E5"/>
 			<SkillComponent stackName="Svelte" stackIconName="Svelte" stackColor="#FF3E00"/>
-			<span class="blockSubTitle fontLight">Backend</span>
+			<span class="blockSubTitle">Backend</span>
 			<SkillComponent stackName="Node.js" stackIconName="NodeJs" stackColor="#339933"/>
 			<SkillComponent stackName="Nest.js" stackIconName="NestJs" stackColor="#E0234E"/>
 			<SkillComponent stackName="Socket.io" stackIconName="SocketIo" stackColor="#010101"/>
@@ -173,8 +183,7 @@ onMount(()=>{
 			<SkillComponent stackName="MongoDB" stackIconName="MongoDB" stackColor="#47A248"/>
 			<SkillComponent stackName="Redis" stackIconName="Redis" stackColor="#DC382D"/>
 			<SkillComponent stackName="PHP" stackIconName="Php" stackColor="#777BB4"/>
-			<SkillComponent stackName="CloudFlare" stackIconName="CloudFlare" stackColor="#F38020"/>
-			<span class="blockSubTitle fontLight">Infra</span>
+			<span class="blockSubTitle">Infra</span>
 			<SkillComponent stackName="Oracle Cloud" stackIconName="Oracle" stackColor="#F80000"/>
 			<SkillComponent stackName="Amazon Web Service" stackIconName="Aws" stackColor="#FF9900"/>
 			<SkillComponent stackName="Docker" stackIconName="Docker" stackColor="#2496ED"/>
@@ -182,22 +191,23 @@ onMount(()=>{
 			<SkillComponent stackName="Git / Github Action" stackIconName="Github" stackColor="#181717"/>
 			<SkillComponent stackName="Vercel" stackIconName="Vercel" stackColor="#000000"/>
 			<SkillComponent stackName="NginX" stackIconName="Nginx" stackColor="#009639"/>
-			<span class="blockSubTitle fontLight">UI</span>
+			<SkillComponent stackName="CloudFlare" stackIconName="CloudFlare" stackColor="#F38020"/>
+			<span class="blockSubTitle">UI</span>
 			<SkillComponent stackName="TailwindCSS" stackIconName="TailwindCss" stackColor="#06B6D4"/>
 			<SkillComponent stackName="Styled-Component" stackIconName="StyledComponent" stackColor="#DB7093"/>
 			<SkillComponent stackName="Chakra UI" stackIconName="ChakraUi" stackColor="#319795"/>
 		</div>
 	</div>
 </section>
-<section style="padding-top: 56px;padding-bottom: 56px">
-	<div class="container" style="align-content: flex-start;margin-top:32px">
+<section>
+	<div class="container" id="title2">
 		<div class="title">
-			<div class="title-tile-1" id="title2" class:title-tile-action={itemVisible[1]} /><h1 style="font-size: 46px">CAREER</h1>
+			<div class="title-tile-1" class:title-tile-action={itemVisible[1]} /><h1 style="font-size: 46px">CAREER</h1>
 		</div>
-		<div style="width: 100%">
-			<h3 style="width: 100%;margin:0;">(주) 아이에스컴퍼니</h3>
-			<p style="color:#999999;margin:5px 0px 5px 0px;">소프트웨어팀 / 대리</p>
-			<p style="color:#999999;margin:0;font-size: 12px">2021년 11월 03일 ~ 2023년 08월 01일 ( 2년 9개월 )</p>
+		<div class="careerBox">
+			<p class="careerCompanyName">(주) 아이에스컴퍼니</p>
+			<p class="careerCompanyDetail">소프트웨어팀 / 대리</p>
+			<p class="careerCompanyDate">2021년 11월 03일 ~ 2023년 08월 01일 ( 2년 9개월 )</p>
 			<p>웹 어플리케이션 및 키오스크 개발</p>
 			<ul>
 				<li>웹 기반 신규 키오스크 서비스 개발</li>
@@ -214,10 +224,10 @@ onMount(()=>{
 				<li>온-프레미스 환경 (VMware ESXi)에서 클라우드 환경 ( Oracle Cloud Infrastructure ) 으로 환경 전환 책임 주도</li>
 			</ul>
 		</div>
-		<div style="width: 100%">
-			<h3 style="width: 100%;margin:0;">(주) 씨에스에스</h3>
-			<p style="color:#999999;margin:5px 0px 5px 0px;">시스템개발팀 / Senior Associate</p>
-			<p style="color:#999999;margin:0;font-size: 12px">2023년 8월 05일 ~ 2024년 05월 08일 ( 9개월 )</p>
+		<div class="careerBox">
+			<p class="careerCompanyName">(주) 씨에스에스</p>
+			<p class="careerCompanyDetail">시스템개발팀 / Senior Associate</p>
+			<p class="careerCompanyDate">2023년 8월 05일 ~ 2024년 05월 08일 ( 9개월 )</p>
 			<p>웹 서비스 개발</p>
 			<ul>
 				<li>Satella 서비스 신규개발 및 유지보수 업무</li>
@@ -230,23 +240,25 @@ onMount(()=>{
 		</div>
 	</div>
 </section>
-<section style="padding-top: 56px;padding-bottom: 56px">
-	<div class="container" style="align-content: flex-start;margin-top:32px">
+<section>
+	<div class="container" id="title3">
 		<div class="title">
-			<div class="title-tile-1" id="title3" class:title-tile-action={itemVisible[2]} /><h1 style="font-size: 46px">PROJECT</h1>
+			<div class="title-tile-1" class:title-tile-action={itemVisible[2]} /><h1 style="font-size: 46px">PROJECT</h1>
 		</div>
-		<div style="width: 100%;display: flex;gap: 24px;">
-			<div style="width: 300px;height: 300px;background-color: gray;min-width: 300px"></div>
-			<div style="display: flex;align-items: flex-start;flex-wrap: wrap;align-content: flex-start">
-				<h1 style="width: 100%">포트폴리오 프로젝트</h1>
-				<div style="display: flex;gap:5px; width: 100%">
+		<div class="projectBox">
+			<div class="projectImage">
+				<div><img src="/portfolio.webp" alt="개인 포트폴리오 로고" /></div>
+			</div>
+			<div class="projectContentBox">
+				<p class="projectName">포트폴리오 프로젝트</p>
+				<div class="projectStack">
 					<SkillComponent stackName="Svelte" stackIconName="Svelte" stackColor="#FF3E00"/>
 					<SkillComponent stackName="Vercel" stackIconName="Vercel" stackColor="#000000"/>
 					<SkillComponent stackName="CloudFlare" stackIconName="CloudFlare" stackColor="#F38020"/>
 				</div>
-				<p style="margin:10px 0 10px 0;width: 100%;white-space: pre">
+				<p class="projectDesc">
 					{`포트폴리오를 문서로 관리하고 있었지만 이번에는 웹에 공개해보자는 목적에서 시작했습니다.`}
-					{`\n포트폴리오 서비스는 작고 가볍기 때문에 최근 관심있게 공부하던 Svelte를 적극적으로 사용하였습니다.`}
+					{`\n포트폴리오 서비스는 작고 가볍기 때문에 최근 관심있게 알아보던 Svelte를 적극적으로 사용하였습니다.`}
 					{`\n또한 정적 페이지인 만큼 Vercel을 통해 배포하고 CloudFlare Proxy를 적용하였습니다.`}
 				</p>
 				<ul>
@@ -255,12 +267,14 @@ onMount(()=>{
 				</ul>
 			</div>
 		</div>
-		<div style="width: 100%;display: flex;gap: 24px;">
-			<div style="width: 300px;height: 300px;background-color: gray;min-width: 300px"></div>
-			<div style="display: flex;align-items: flex-start;flex-wrap: wrap;align-content: flex-start">
-				<h1 style="width: 100%;">개인 블로그 프로젝트</h1>
+		<div class="projectBox">
+			<div class="projectImage">
+				<div><img src="/logo-concept.webp" alt="Kirsi Blog 로고" /></div>
+			</div>
+			<div class="projectContentBox">
+				<p class="projectName">개인 블로그 프로젝트</p>
 
-				<div style="display: flex;gap:5px; width: 100%;flex-wrap: wrap;">
+				<div class="projectStack">
 					<SkillComponent stackName="Next.js 14" stackIconName="NextJs" stackColor="#000000"/>
 					<SkillComponent stackName="Docker" stackIconName="Docker" stackColor="#2496ED"/>
 					<SkillComponent stackName="Oracle Cloud" stackIconName="Oracle" stackColor="#F80000"/>
@@ -270,7 +284,7 @@ onMount(()=>{
 					<SkillComponent stackName="TailwindCSS" stackIconName="TailwindCss" stackColor="#06B6D4"/>
 					<SkillComponent stackName="CloudFlare" stackIconName="CloudFlare" stackColor="#F38020"/>
 				</div>
-				<p style="margin:10px 0 10px 0;width: 100%;white-space: pre">
+				<p class="projectDesc">
 					{`티스토리를 사용하던 중, 블로그의 디자인을 깔끔하게 만들고 초기 로딩시간을 최대한 줄이고 싶다는 생각이 들었습니다.`}
 					{`\n그러던 와중 React 18의 RSC / RCC에 흥미가 생겨 블로그를 제작하기로 결정하였습니다.\n`}
 					{`\nRSC를 적극적으로 도입해 향후 React의 방향성에 대해 알아볼 수 있었고 만족스러운 초기 로딩속도와 디자인을 제작할 수 있었습니다.`}
@@ -283,11 +297,13 @@ onMount(()=>{
 				</ul>
 			</div>
 		</div>
-		<div style="width: 100%;display: flex;gap: 24px;">
-			<div style="width: 300px;height: 300px;background-color: gray;min-width: 300px"></div>
-			<div style="display: flex;align-items: flex-start;flex-wrap: wrap;align-content: flex-start">
-				<h1 style="width: 100%">Satella</h1>
-				<div style="display: flex;gap:5px; width: 100%;flex-wrap: wrap;">
+		<div class="projectBox">
+			<div class="projectImage">
+				<div><img src="/satella_logo_color.svg" alt="satella 로고" /></div>
+			</div>
+			<div class="projectContentBox">
+				<p class="projectName">Satella</p>
+				<div class="projectStack">
 					<SkillComponent stackName="Next.js" stackIconName="NextJs" stackColor="#000000"/>
 					<SkillComponent stackName="Docker" stackIconName="Docker" stackColor="#2496ED"/>
 					<SkillComponent stackName="Jenkins" stackIconName="Jenkins" stackColor="#D24939"/>
@@ -295,7 +311,7 @@ onMount(()=>{
 					<SkillComponent stackName="ReactQuery" stackIconName="ReactQuery" stackColor="#FF4154"/>
 					<SkillComponent stackName="Recoil" stackIconName="Recoil" stackColor="#3578E5"/>
 				</div>
-				<p style="margin:10px 0 10px 0;width: 100%;white-space: pre">
+				<p class="projectDesc">
 					{`(주)씨에스에스에서 개발한 서브컬쳐 플렛폼입니다.`}
 				</p>
 				<ul>
@@ -304,13 +320,13 @@ onMount(()=>{
 				</ul>
 			</div>
 		</div>
-		<div style="width: 100%;display: flex;gap: 24px;">
-			<div class="projectImage" style="">
-				<div style="width: 300px;height: 300px;background-color: gray;min-width: 300px"></div>
+		<div class="projectBox">
+			<div class="projectImage">
+				<div><img src="/ritto_icon.webp" alt="RITTO 로고" /></div>
 			</div>
-			<div style="display: flex;align-items: flex-start;flex-wrap: wrap;align-content: flex-start">
-				<h1 style="width: 100%">RITTO 키오스크 / 백오피스 서비스</h1>
-				<div style="display: flex;gap:5px; width: 100%;flex-wrap: wrap;">
+			<div class="projectContentBox">
+				<p class="projectName">RITTO 키오스크 / 백오피스 서비스</p>
+				<div class="projectStack">
 					<SkillComponent stackName="Next.js" stackIconName="NextJs" stackColor="#000000"/>
 					<SkillComponent stackName="React" stackIconName="React" stackColor="#61DAFB"/>
 					<SkillComponent stackName="Docker" stackIconName="Docker" stackColor="#2496ED"/>
@@ -318,8 +334,9 @@ onMount(()=>{
 					<SkillComponent stackName="Oracle Cloud" stackIconName="Oracle" stackColor="#F80000"/>
 					<SkillComponent stackName="TailwindCSS" stackIconName="TailwindCss" stackColor="#06B6D4"/>
 					<SkillComponent stackName="Electron" stackIconName="Electron" stackColor="#47848F"/>
+					<SkillComponent stackName="Socket.io" stackIconName="SocketIo" stackColor="#010101"/>
 				</div>
-				<p style="margin:10px 0 10px 0;width: 100%;white-space: pre">
+				<p class="projectDesc">
 					{`(주)아이에스컴퍼니 에서 개발한 키오스크 서비스 및 백오피스입니다.`}
 				</p>
 				<ul>
@@ -330,13 +347,13 @@ onMount(()=>{
 				</ul>
 			</div>
 		</div>
-		<div style="width: 100%;display: flex;gap: 24px;">
+		<div class="projectBox">
 			<div class="projectImage" style="">
-				<div style="width: 300px;height: 300px;background-color: gray;min-width: 300px"></div>
+				<div><img src="/ritto_icon.webp" alt="RITTO 로고" /></div>
 			</div>
-			<div style="display: flex;align-items: flex-start;flex-wrap: wrap;align-content: flex-start">
-				<h1 style="width: 100%">RITTO 통합 제어 서버</h1>
-				<div style="display: flex;gap:5px; width: 100%;flex-wrap: wrap;">
+			<div class="projectContentBox">
+				<p class="projectName">RITTO 통합 제어 서버</p>
+				<div class="projectStack">
 					<SkillComponent stackName="Node.js" stackIconName="NodeJs" stackColor="#339933"/>
 					<SkillComponent stackName="Docker" stackIconName="Docker" stackColor="#2496ED"/>
 					<SkillComponent stackName="Oracle Cloud" stackIconName="Oracle" stackColor="#F80000"/>
@@ -344,7 +361,7 @@ onMount(()=>{
 					<SkillComponent stackName="Grpc" stackIconName="Grpc" stackColor="#000000"/>
 					<SkillComponent stackName="Redis" stackIconName="Redis" stackColor="#DC382D"/>
 				</div>
-				<p style="margin:10px 0 10px 0;width: 100%;white-space: pre">
+				<p class="projectDesc">
 					{`(주)아이에스컴퍼니 에서 개발한 모든 주문 관련 서비스의 통합 백엔드 프로젝트 입니다.`}
 				</p>
 				<ul>
@@ -356,20 +373,20 @@ onMount(()=>{
 				</ul>
 			</div>
 		</div>
-		<div style="width: 100%;display: flex;gap: 24px;">
-			<div class="projectImage" style="">
-				<div style="width: 300px;height: 300px;background-color: gray;min-width: 300px"></div>
+		<div class="projectBox">
+			<div class="projectImage">
+				<div><img src="/ddb_logo.webp" alt="댕댕베이스 로고" /></div>
 			</div>
-			<div style="display: flex;align-items: flex-start;flex-wrap: wrap;align-content: flex-start">
-				<h1 style="width: 100%">댕댕베이스</h1>
-				<div style="display: flex;gap:5px; width: 100%;flex-wrap: wrap;">
+			<div class="projectContentBox">
+				<p class="projectName">댕댕베이스</p>
+				<div class="projectStack">
 					<SkillComponent stackName="PHP" stackIconName="Php" stackColor="#777BB4"/>
 					<SkillComponent stackName="Redis" stackIconName="Redis" stackColor="#DC382D"/>
 					<SkillComponent stackName="MySQL" stackIconName="MySQL" stackColor="#4479A1"/>
 					<SkillComponent stackName="CentOS" stackIconName="CentOs" stackColor="#262577"/>
 					<SkillComponent stackName="Apache" stackIconName="Apache" stackColor="#D22128"/>
 				</div>
-				<p style="margin:10px 0 10px 0;width: 100%;white-space: pre">
+				<p class="projectDesc">
 					{`소녀전선이라는 게임의 DB 사이트입니다, 당시 정보를 찾아볼 수 있는 사이트가 없어 군 복무중 개발하였습니다.\n`}
 					{`N54L 이라는 AMD 저전력 32bit 듀얼코어 프로세서에서 20000페이지 뷰라는 접속량 발생으로 인해 처음으로 Redis 도입을 진행한 프로젝트입니다.\n`}
 					{`DB의 보틀넥 현상에 대해 경험해볼 수 있는 좋은 기회가 되었습니다.`}
@@ -392,6 +409,9 @@ onMount(()=>{
 		width: 100%;
 		justify-content: center;
 		z-index: 4;
+		padding-top: 56px;
+		padding-bottom: 56px;
+		overflow: hidden;
 	}
 	.firstSection {
 		display: flex;
@@ -399,6 +419,8 @@ onMount(()=>{
 		height:100vh;
 		align-content: center;
 		justify-content: flex-start;
+		padding-top: 0px;
+		padding-bottom: 0px
 	}
 	.sectionBlock > p {
 		font-family: 'Pretendard', serif;
@@ -422,10 +444,25 @@ onMount(()=>{
 		font-family: 'Pretendard', serif;
 		width: 1200px;
 		height: 100%;
-		padding-left: 150px;
-		align-content: center;
+		padding:0 70px 0 70px;
 		flex-wrap: wrap;
 		gap:18px;
 		z-index: 4;
+		align-content: flex-start;
+		margin-top:32px;
+		box-sizing: border-box;
+	}
+
+	@media (max-width: 640px) {
+		.sectionBlock {
+			width: 100%;
+			transform: scale(0.5);
+			padding-left:0;
+			margin-left:-20px;
+		}
+		.container {
+			width: 100%;
+			padding:0 16px 0 16px;
+		}
 	}
 </style>

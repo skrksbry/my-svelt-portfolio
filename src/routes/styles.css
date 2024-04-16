@@ -43,7 +43,118 @@ body {
 	height: 24px;
 }
 .bouncy {
+	position: absolute;
+	width: 100%;
+	display: flex;
+	bottom: 40px;
+	align-items: center;
+	z-index: 4;
+	flex-flow: column;
+	opacity: 0.5;
 	animation: bounce 2s ease-in-out infinite;
+}
+.bouncy > p {
+	margin:0;
+	font-weight: 700;
+	font-size: 10px;
+}
+.nameTagBox {
+	width: 100%;
+	display: flex;
+	gap: 24px;
+	flex-wrap: wrap;
+}
+.profileImage {
+	width: 120px;
+	height: 120px;
+	border-radius: 200px;
+	background-color: gray;
+}
+.profileBox {
+	display: flex;
+	flex-wrap: wrap;
+	align-content: center;
+}
+.profileBox > .name {
+	font-size: 36px;
+	font-weight: 900;
+	margin:0;
+}
+.profileBox > .birthday {
+	font-size: 14px;
+	width: 100%;
+	margin:0;
+	color:#999999;
+}
+.profileBox > .comment {
+	font-size: 16px;
+	width: 100%;
+	margin: 6px 0 0;
+}
+.contactBox {
+	width: 100%;
+	display: flex;
+	gap: 10px;
+	flex-wrap: wrap;
+	margin-top:24px;
+}
+.contactBox > p {
+	width: 100%;
+	margin:0;
+	font-size: 24px;
+	font-weight: 700;
+}
+.skillBox {
+	width: 100%;
+	display: flex;
+	gap: 12px;
+	flex-wrap: wrap;
+	margin-top:24px;
+}
+.careerBox {
+	width: 100%;
+}
+.careerCompanyName {
+	width: 100%;
+	font-size: 21px;
+	font-weight: 700;
+	margin: 0;
+}
+.careerCompanyDetail {
+	color:#999999;
+	margin:5px 0 5px 0;
+}
+.careerCompanyDate {
+	color:#999999;
+	margin:0;
+	font-size: 12px;
+}
+.projectBox {
+	width: 100%;
+	display: flex;
+	gap: 24px;
+}
+.projectContentBox {
+	display: flex;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	align-content: flex-start;
+}
+.projectName {
+	width: 100%;
+	font-weight: 700;
+	font-size: 24px;
+}
+.projectStack {
+	display: flex;
+	gap:5px;
+	width: 100%;
+	flex-wrap:wrap;
+}
+.projectDesc {
+	margin:10px 0 10px 0;
+	width: 100%;
+	white-space: pre-wrap;
 }
 .title {
 	display: flex;
@@ -56,6 +167,10 @@ body {
 	width: 100%;
 	align-items: center;
 	gap:6px
+}
+.smallTitle > p {
+	font-size: 16px;
+	margin:0;
 }
 .title-tile-1 {
 	display: flex;
@@ -86,6 +201,42 @@ body {
 	font-family: 'Pretendard', serif;
 	font-weight: 700;
 	width: 100%;
+}
+.projectImage {
+
+}
+.projectImage > div {
+	width: 300px;
+	height: 300px;
+	min-width: 300px;
+	display: flex;
+	justify-content: center;
+}
+.projectImage > div > img {
+	width: 80%;
+	height: 80%;
+	object-fit: contain;
+}
+.titleTypo {
+	font-size: 42px;
+	font-weight: 900;
+	margin:0;
+}
+.backgroundBlackScreen {
+	background-color: rgba(0,0,0,0.75);
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+	position:fixed;
+}
+
+@media (max-width: 1024px) {
+	.projectBox {
+		flex-wrap: wrap;
+	}
+	.projectContentBox {
+		width: 100%;
+	}
 }
 
 @keyframes flyIn {
