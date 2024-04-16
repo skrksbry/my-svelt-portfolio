@@ -419,8 +419,8 @@ onMount(()=>{
 		height:100vh;
 		align-content: center;
 		justify-content: flex-start;
-		padding-top: 0px;
-		padding-bottom: 0px
+		padding-top: 0;
+		padding-bottom: 0
 	}
 	.sectionBlock > p {
 		font-family: 'Pretendard', serif;
