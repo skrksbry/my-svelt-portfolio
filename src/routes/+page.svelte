@@ -6,6 +6,8 @@ import LineContainer from "../components/LineContainer.svelte";
 import GradientBackground from "../components/GradientBackground.svelte";
 import Icon from "../icons/Icon.svelte"
 import SkillComponent from "../components/SkillComponent.svelte";
+import StackIcon from "../icons/StackIcon.svelte";
+import KirsiBlogLogo from "../components/KirsiBlogLogo.svelte";
 let visual = false;
 let backgroundVisual = false;
 
@@ -21,7 +23,6 @@ onMount(()=>{
 	setTimeout(()=>{backgroundVisual = true},1000);
 	observer = new IntersectionObserver((entries) => {
 		entries.forEach(entry => {
-			console.log(entry.intersectionRatio)
 			if(entry.target.getAttribute('id') === "title1"){
 				if(entry.intersectionRatio > 0.8) {
 					itemVisible[0] = entry.isIntersecting;
@@ -46,7 +47,6 @@ onMount(()=>{
 
 	ids.forEach(item => {
 		const element = document.querySelector(`#${item}`);
-		console.log(element);
 		if (element) {
 			observer.observe(element);
 		}
@@ -198,6 +198,11 @@ onMount(()=>{
 			<SkillComponent stackName="TailwindCSS" stackIconName="TailwindCss" stackColor="#06B6D4"/>
 			<SkillComponent stackName="Styled-Component" stackIconName="StyledComponent" stackColor="#DB7093"/>
 			<SkillComponent stackName="Chakra UI" stackIconName="ChakraUi" stackColor="#319795"/>
+			<span class="blockSubTitle">Future</span>
+			<SkillComponent stackName="Dart" stackIconName="Dart" stackColor="#0175C2"/>
+			<SkillComponent stackName="Flutter" stackIconName="Flutter" stackColor="#02569B"/>
+			<SkillComponent stackName="Solid.js" stackIconName="SolidJs" stackColor="#2C4F7C"/>
+			<SkillComponent stackName="Java Spring" stackIconName="Spring" stackColor="#6DB33F"/>
 		</div>
 	</div>
 </section>
@@ -267,6 +272,11 @@ onMount(()=>{
 					<li>처음부터 끝까지 Svelte를 적용하여 개발하였습니다.</li>
 					<li>Vercel을 통해 배포하고, CloudFlare Proxy를 사용하였습니다.</li>
 				</ul>
+				<p class="projectLinkTitle">더 알아보기</p>
+				<div class="projectLink">
+					<a href="https://github.com/skrksbry/my-svelt-portfolio" target="_blank"><div><Icon IconName="Link" className="SmallIconStyle" fill="#000000" /><StackIcon IconName={"Github"} className="stackIcon" fill={"#000"}/>Github</div></a>
+					<a href="https://github.com/skrksbry/my-svelt-portfolio" target="_blank"><div><Icon IconName="Link" className="SmallIconStyle" fill="#000000" /><KirsiBlogLogo />포트폴리오 웹 사이트 제작기</div></a>
+				</div>
 			</div>
 		</div>
 		<div class="projectBox">
@@ -287,8 +297,8 @@ onMount(()=>{
 					<SkillComponent stackName="CloudFlare" stackIconName="CloudFlare" stackColor="#F38020"/>
 				</div>
 				<p class="projectDesc">
-					{`티스토리를 사용하던 중, 블로그의 디자인을 깔끔하게 만들고 초기 로딩시간을 최대한 줄이고 싶다는 생각이 들었습니다.`}
-					{`\n그러던 와중 React 18의 RSC / RCC에 흥미가 생겨 블로그를 제작하기로 결정하였습니다.\n`}
+					{`티스토리를 사용하던 중, 자기만의 블로그를 만들어 깔끔한 디자인을 적용하면서도 최초 로딩속도를 매우 빠르게 만들어 보고자 했습니다.`}
+					{`\n후보를 찾아보던중 비교적 최근 발표된 React 18의 RSC / RCC에 흥미가 생겨 Next.js 를 통해 RSC와 RCC, SSR을 이용하여 블로그를 제작하기로 결정하였습니다.\n`}
 					{`\nRSC를 적극적으로 도입해 향후 React의 방향성에 대해 알아볼 수 있었고 만족스러운 초기 로딩속도와 디자인을 제작할 수 있었습니다.`}
 				</p>
 				<ul>
