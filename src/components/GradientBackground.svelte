@@ -32,12 +32,11 @@
             currentGradient = nextGradient;
             currentDeg = nextDeg;
             changing = false;
-        }, 2000); // 애니메이션 시간과 일치시키기
+        }, 2000);
     }
 
     let interval :NodeJS.Timeout;
     onMount(() => {
-        console.log("mounted;");
         interval = setInterval(changeGradient, 4000);
     });
 
