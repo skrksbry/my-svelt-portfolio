@@ -15,6 +15,8 @@ let ids = ["title1","title2","title3"]
 let observer :IntersectionObserver;
 
 onMount(()=>{
+	console.log("%cWELCOME MY PORTFOLIO !", "font-size: 32px; font-weight:900; background: linear-gradient(to right, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%); -webkit-background-clip: text; color: transparent;");
+
 	visual = true;
 	setTimeout(()=>{backgroundVisual = true},1000);
 	observer = new IntersectionObserver((entries) => {
