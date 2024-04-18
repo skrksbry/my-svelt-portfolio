@@ -24,13 +24,13 @@ onMount(()=>{
 	observer = new IntersectionObserver((entries) => {
 		entries.forEach(entry => {
 			if(entry.target.getAttribute('id') === "title1"){
-				if(entry.intersectionRatio > 0.8) {
+				if(entry.intersectionRatio > 0.65) {
 					itemVisible[0] = entry.isIntersecting;
 				}else{
 					itemVisible[0] = false;
 				}
 			} else if(entry.target.getAttribute('id') === "title2" ){
-				if(entry.intersectionRatio > 0.8) {
+				if(entry.intersectionRatio > 0.65) {
 					itemVisible[1] = entry.isIntersecting;
 				}else{
 					itemVisible[1] = false;
@@ -42,7 +42,7 @@ onMount(()=>{
 	}, {
 		root: null,
 		rootMargin: '0px',
-		threshold: [0.2,0.8]
+		threshold: [0.15,0.65]
 	});
 
 	ids.forEach(item => {
@@ -259,9 +259,9 @@ onMount(()=>{
 			<div class="projectContentBox">
 				<p class="projectName">포트폴리오 프로젝트</p>
 				<div class="projectStack">
-					<SkillComponent stackName="Svelte" stackIconName="Svelte" stackColor="#FF3E00"/>
-					<SkillComponent stackName="Vercel" stackIconName="Vercel" stackColor="#000000"/>
-					<SkillComponent stackName="CloudFlare" stackIconName="CloudFlare" stackColor="#F38020"/>
+					<SkillComponent stackName="Svelte" stackIconName="Svelte" stackColor="#FF3E00" styleTheme="project"/>
+					<SkillComponent stackName="Vercel" stackIconName="Vercel" stackColor="#666666" styleTheme="project"/>
+					<SkillComponent stackName="CloudFlare" stackIconName="CloudFlare" stackColor="#F38020" styleTheme="project"/>
 				</div>
 				<p class="projectDesc">
 					{`포트폴리오를 문서로 관리하고 있었지만 이번에는 웹에 공개해보자는 목적에서 시작했습니다.`}
@@ -272,10 +272,10 @@ onMount(()=>{
 					<li>처음부터 끝까지 Svelte를 적용하여 개발하였습니다.</li>
 					<li>Vercel을 통해 배포하고, CloudFlare Proxy를 사용하였습니다.</li>
 				</ul>
-				<p class="projectLinkTitle">더 알아보기</p>
+				<p class="projectLinkTitle"><Icon IconName="Link" className="SmallIconStyle" fill="#000000" />더 알아보기</p>
 				<div class="projectLink">
-					<a href="https://github.com/skrksbry/my-svelt-portfolio" target="_blank"><div><Icon IconName="Link" className="SmallIconStyle" fill="#000000" /><StackIcon IconName={"Github"} className="stackIcon" fill={"#000"}/>Github</div></a>
-					<a href="https://github.com/skrksbry/my-svelt-portfolio" target="_blank"><div><Icon IconName="Link" className="SmallIconStyle" fill="#000000" /><KirsiBlogLogo />포트폴리오 웹 사이트 제작기</div></a>
+					<a href="https://github.com/skrksbry/my-svelt-portfolio" target="_blank"><div><StackIcon IconName={"Github"} className="stackIcon" fill={"#000"}/>Github</div></a>
+					<a href="https://github.com/skrksbry/my-svelt-portfolio" target="_blank"><div><KirsiBlogLogo />포트폴리오 웹 사이트 제작기</div></a>
 				</div>
 			</div>
 		</div>
@@ -287,14 +287,14 @@ onMount(()=>{
 				<p class="projectName">개인 블로그 프로젝트</p>
 
 				<div class="projectStack">
-					<SkillComponent stackName="Next.js 14" stackIconName="NextJs" stackColor="#000000"/>
-					<SkillComponent stackName="Docker" stackIconName="Docker" stackColor="#2496ED"/>
-					<SkillComponent stackName="Oracle Cloud" stackIconName="Oracle" stackColor="#F80000"/>
-					<SkillComponent stackName="Nest.js" stackIconName="NestJs" stackColor="#E0234E"/>
-					<SkillComponent stackName="MariaDB" stackIconName="MySQL" stackColor="#4479A1"/>
-					<SkillComponent stackName="Redis" stackIconName="Redis" stackColor="#DC382D"/>
-					<SkillComponent stackName="TailwindCSS" stackIconName="TailwindCss" stackColor="#06B6D4"/>
-					<SkillComponent stackName="CloudFlare" stackIconName="CloudFlare" stackColor="#F38020"/>
+					<SkillComponent stackName="Next.js 14" stackIconName="NextJs" stackColor="#666666" styleTheme="project"/>
+					<SkillComponent stackName="Docker" stackIconName="Docker" stackColor="#2496ED" styleTheme="project"/>
+					<SkillComponent stackName="Oracle Cloud" stackIconName="Oracle" stackColor="#F80000" styleTheme="project"/>
+					<SkillComponent stackName="Nest.js" stackIconName="NestJs" stackColor="#E0234E" styleTheme="project"/>
+					<SkillComponent stackName="MariaDB" stackIconName="MySQL" stackColor="#4479A1" styleTheme="project"/>
+					<SkillComponent stackName="Redis" stackIconName="Redis" stackColor="#DC382D" styleTheme="project"/>
+					<SkillComponent stackName="TailwindCSS" stackIconName="TailwindCss" stackColor="#06B6D4" styleTheme="project"/>
+					<SkillComponent stackName="CloudFlare" stackIconName="CloudFlare" stackColor="#F38020" styleTheme="project"/>
 				</div>
 				<p class="projectDesc">
 					{`티스토리를 사용하던 중, 자기만의 블로그를 만들어 깔끔한 디자인을 적용하면서도 최초 로딩속도를 매우 빠르게 만들어 보고자 했습니다.`}
@@ -307,11 +307,11 @@ onMount(()=>{
 					<li>Next 14 / React 19 버전의 RSC와 RCC그리고 SSR을 적절하게 사용하여 개발하였습니다.</li>
 					<li>깔끔한 디자인과 빠른 속도를 핵심 가치로 목표하고 개발하였습니다.</li>
 				</ul>
-				<p class="projectLinkTitle">더 알아보기</p>
+				<p class="projectLinkTitle"><Icon IconName="Link" className="SmallIconStyle" fill="#000000" />더 알아보기</p>
 				<div class="projectLink">
 					<a href="https://blog.silvercherry.io" target="_blank"><div><Icon IconName="Link" className="SmallIconStyle" fill="#000000" />블로그 바로가기</div></a>
-					<a href="https://github.com/skrksbry/kirsiblog" target="_blank"><div><Icon IconName="Link" className="SmallIconStyle" fill="#000000" /><StackIcon IconName={"Github"} className="stackIcon" fill={"#000"}/>Github</div></a>
-					<a href="https://github.com/skrksbry/kirsiblog" target="_blank"><div><Icon IconName="Link" className="SmallIconStyle" fill="#000000" /><KirsiBlogLogo />블로그 제작기</div></a>
+					<a href="https://github.com/skrksbry/kirsiblog" target="_blank"><div><StackIcon IconName={"Github"} className="stackIcon" fill={"#000"}/>Github</div></a>
+					<a href="https://github.com/skrksbry/kirsiblog" target="_blank"><div><KirsiBlogLogo />블로그 제작기</div></a>
 				</div>
 			</div>
 		</div>
@@ -322,12 +322,12 @@ onMount(()=>{
 			<div class="projectContentBox">
 				<p class="projectName">Satella</p>
 				<div class="projectStack">
-					<SkillComponent stackName="Next.js" stackIconName="NextJs" stackColor="#000000"/>
-					<SkillComponent stackName="Docker" stackIconName="Docker" stackColor="#2496ED"/>
-					<SkillComponent stackName="Jenkins" stackIconName="Jenkins" stackColor="#D24939"/>
-					<SkillComponent stackName="AWS" stackIconName="Aws" stackColor="#FF9900"/>
-					<SkillComponent stackName="ReactQuery" stackIconName="ReactQuery" stackColor="#FF4154"/>
-					<SkillComponent stackName="Recoil" stackIconName="Recoil" stackColor="#3578E5"/>
+					<SkillComponent stackName="Next.js" stackIconName="NextJs" stackColor="#666666" styleTheme="project"/>
+					<SkillComponent stackName="Docker" stackIconName="Docker" stackColor="#2496ED" styleTheme="project"/>
+					<SkillComponent stackName="Jenkins" stackIconName="Jenkins" stackColor="#D24939" styleTheme="project"/>
+					<SkillComponent stackName="AWS" stackIconName="Aws" stackColor="#FF9900" styleTheme="project"/>
+					<SkillComponent stackName="ReactQuery" stackIconName="ReactQuery" stackColor="#FF4154" styleTheme="project"/>
+					<SkillComponent stackName="Recoil" stackIconName="Recoil" stackColor="#3578E5" styleTheme="project"/>
 				</div>
 				<p class="projectDesc">
 					{`(주)씨에스에스에서 개발한 서브컬쳐 플렛폼입니다.`}
@@ -336,7 +336,7 @@ onMount(()=>{
 					<li>Jenkins CI/CD 도입을 주도하여 작업하였으며, AWS EC2 인스턴스 최적화 및 이중화 작업을 수행했습니다.</li>
 					<li>Next.js 를 이용해 서비스의 신규 기능개발 및 기존 기능 고도화 작업을 진행했습니다.</li>
 				</ul>
-				<p class="projectLinkTitle">더 알아보기</p>
+				<p class="projectLinkTitle"><Icon IconName="Link" className="SmallIconStyle" fill="#000000" />더 알아보기</p>
 				<div class="projectLink">
 					<a href="https://satella.co.kr/" target="_blank"><div><Icon IconName="Link" className="SmallIconStyle" fill="#000000" />Satella</div></a>
 				</div>
@@ -349,14 +349,14 @@ onMount(()=>{
 			<div class="projectContentBox">
 				<p class="projectName">RITTO 키오스크 / 백오피스 서비스</p>
 				<div class="projectStack">
-					<SkillComponent stackName="Next.js" stackIconName="NextJs" stackColor="#000000"/>
-					<SkillComponent stackName="React" stackIconName="React" stackColor="#61DAFB"/>
-					<SkillComponent stackName="Docker" stackIconName="Docker" stackColor="#2496ED"/>
-					<SkillComponent stackName="Recoil" stackIconName="Recoil" stackColor="#3578E5"/>
-					<SkillComponent stackName="Oracle Cloud" stackIconName="Oracle" stackColor="#F80000"/>
-					<SkillComponent stackName="TailwindCSS" stackIconName="TailwindCss" stackColor="#06B6D4"/>
-					<SkillComponent stackName="Electron" stackIconName="Electron" stackColor="#47848F"/>
-					<SkillComponent stackName="Socket.io" stackIconName="SocketIo" stackColor="#010101"/>
+					<SkillComponent stackName="Next.js" stackIconName="NextJs" stackColor="#666666" styleTheme="project"/>
+					<SkillComponent stackName="React" stackIconName="React" stackColor="#61DAFB" styleTheme="project"/>
+					<SkillComponent stackName="Docker" stackIconName="Docker" stackColor="#2496ED" styleTheme="project"/>
+					<SkillComponent stackName="Recoil" stackIconName="Recoil" stackColor="#3578E5" styleTheme="project"/>
+					<SkillComponent stackName="Oracle Cloud" stackIconName="Oracle" stackColor="#F80000" styleTheme="project"/>
+					<SkillComponent stackName="TailwindCSS" stackIconName="TailwindCss" stackColor="#06B6D4" styleTheme="project"/>
+					<SkillComponent stackName="Electron" stackIconName="Electron" stackColor="#47848F" styleTheme="project"/>
+					<SkillComponent stackName="Socket.io" stackIconName="SocketIo" stackColor="#666666" styleTheme="project"/>
 				</div>
 				<p class="projectDesc">
 					{`(주)아이에스컴퍼니 에서 개발한 키오스크 서비스 및 백오피스입니다.`}
@@ -367,7 +367,7 @@ onMount(()=>{
 					<li>UX에 관심을 가지고 고객 동향을 모니터링하여 UX 개선을 통해 불만을 크게 줄였습니다 (사용점주 포함).</li>
 					<li>온-프레미스 환경에서 클라우드 서비스인 OCI ( Oracle Cloud ) 로 전환을 통해 물리적 사고 위험을 낮추고 고가용성을 확보했습니다.</li>
 				</ul>
-				<p class="projectLinkTitle">더 알아보기</p>
+				<p class="projectLinkTitle"><Icon IconName="Link" className="SmallIconStyle" fill="#000000" />더 알아보기</p>
 				<div class="projectLink">
 					<a href="https://ritto.kr/" target="_blank"><div><Icon IconName="Link" className="SmallIconStyle" fill="#000000" />RITTO</div></a>
 				</div>
@@ -380,12 +380,12 @@ onMount(()=>{
 			<div class="projectContentBox">
 				<p class="projectName">RITTO 통합 제어 서버</p>
 				<div class="projectStack">
-					<SkillComponent stackName="Node.js" stackIconName="NodeJs" stackColor="#339933"/>
-					<SkillComponent stackName="Docker" stackIconName="Docker" stackColor="#2496ED"/>
-					<SkillComponent stackName="Oracle Cloud" stackIconName="Oracle" stackColor="#F80000"/>
-					<SkillComponent stackName="MariaDB" stackIconName="MySQL" stackColor="#4479A1"/>
-					<SkillComponent stackName="Grpc" stackIconName="Grpc" stackColor="#000000"/>
-					<SkillComponent stackName="Redis" stackIconName="Redis" stackColor="#DC382D"/>
+					<SkillComponent stackName="Node.js" stackIconName="NodeJs" stackColor="#339933" styleTheme="project"/>
+					<SkillComponent stackName="Docker" stackIconName="Docker" stackColor="#2496ED" styleTheme="project"/>
+					<SkillComponent stackName="Oracle Cloud" stackIconName="Oracle" stackColor="#F80000" styleTheme="project"/>
+					<SkillComponent stackName="MariaDB" stackIconName="MySQL" stackColor="#4479A1" styleTheme="project"/>
+					<SkillComponent stackName="Grpc" stackIconName="Grpc" stackColor="#666666" styleTheme="project"/>
+					<SkillComponent stackName="Redis" stackIconName="Redis" stackColor="#DC382D" styleTheme="project"/>
 				</div>
 				<p class="projectDesc">
 					{`(주)아이에스컴퍼니 에서 개발한 모든 주문 관련 서비스의 통합 백엔드 프로젝트 입니다.`}
@@ -397,7 +397,7 @@ onMount(()=>{
 					<li>Grpc 도입을 통해 통신 오버헤드를 50% 이상 감소시키고 MCU와 직접 통신하며 발생하는 문제를 해결하였습니다.</li>
 					<li>Redis 도입을 통해 발생한 주문을 캐싱하여 DB 쿼리량을 크게 감소시켜 DB 부하 및 비용을 30% 이상 감소시켰습니다.</li>
 				</ul>
-				<p class="projectLinkTitle">더 알아보기</p>
+				<p class="projectLinkTitle"><Icon IconName="Link" className="SmallIconStyle" fill="#000000" />더 알아보기</p>
 				<div class="projectLink">
 					<a href="https://ritto.kr/" target="_blank"><div><Icon IconName="Link" className="SmallIconStyle" fill="#000000" />RITTO</div></a>
 				</div>
@@ -410,11 +410,11 @@ onMount(()=>{
 			<div class="projectContentBox">
 				<p class="projectName">댕댕베이스</p>
 				<div class="projectStack">
-					<SkillComponent stackName="PHP" stackIconName="Php" stackColor="#777BB4"/>
-					<SkillComponent stackName="Redis" stackIconName="Redis" stackColor="#DC382D"/>
-					<SkillComponent stackName="MySQL" stackIconName="MySQL" stackColor="#4479A1"/>
-					<SkillComponent stackName="CentOS" stackIconName="CentOs" stackColor="#262577"/>
-					<SkillComponent stackName="Apache" stackIconName="Apache" stackColor="#D22128"/>
+					<SkillComponent stackName="PHP" stackIconName="Php" stackColor="#777BB4" styleTheme="project"/>
+					<SkillComponent stackName="Redis" stackIconName="Redis" stackColor="#DC382D" styleTheme="project"/>
+					<SkillComponent stackName="MySQL" stackIconName="MySQL" stackColor="#4479A1" styleTheme="project"/>
+					<SkillComponent stackName="CentOS" stackIconName="CentOs" stackColor="#262577" styleTheme="project"/>
+					<SkillComponent stackName="Apache" stackIconName="Apache" stackColor="#D22128" styleTheme="project"/>
 				</div>
 				<p class="projectDesc">
 					{`소녀전선이라는 게임의 DB 사이트입니다, 당시 정보를 찾아볼 수 있는 사이트가 없어 군 복무중 개발하였습니다.\n`}

@@ -1,35 +1,30 @@
 <script lang="ts">
     import { viewStack } from '../stores/stores';
     import StackIcon from "../icons/StackIcon.svelte";
-    import {onMount} from "svelte";
 
     export let stackName: string = "";
     export let stackIconName: string = "";
     export let stackColor: string = "red";
     export let fillColor: string = "#434242";
+    export let styleTheme: string = "normal"; // normal : project
     export let isSelected: boolean = false;
-    fillColor = stackColor;
+    fillColor = styleTheme === "normal" ? stackColor : "#fff";
     export const enterStack = () => {
         fillColor = stackColor;
         viewStack.update(n => stackName);
     }
 
     export const leaveStack = () => {
-        // fillColor = "rgb(226, 222, 222)";
-        // isSelected = false;
-        // viewStack.update(n => "");
+        if( styleTheme === "project" ){
+            fillColor = "#fff";
+        }
     }
 
     viewStack.subscribe((value:string)=>{
-        // if(value !== stackName){
-        //     fillColor = "#434242";
-        //     isSelected = false;
-        // }else{
-        //     isSelected = true;
-        // }
+
     })
 </script>
-<button class="techStack" on:mouseover={enterStack} on:focus={()=>{}} on:mouseleave={leaveStack}>
+<button class="techStack" class:isProject={styleTheme === "project"} on:mouseover={enterStack} on:focus={()=>{}} on:mouseleave={leaveStack}>
     <StackIcon IconName={stackIconName} className="stackIcon" fill={fillColor}/>
     <span>
         {stackName}
@@ -46,14 +41,15 @@
         font-weight: 500;
         font-size: 0.8em;
         gap: 6px;
-        background-color: #ffffff;
+        background-color: #fff;
         border-radius: 4px;
         padding: 6px 14px;
-        color: #000000;
+        color: #000;
         border: 0;
     }
-    .techStack:hover {
-        background-color: #dddddd;
+    .isProject {
+        background-color: transparent;
+        color: #fff;
     }
     .techStack span {
         font-size: 1.2em;
