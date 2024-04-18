@@ -298,15 +298,21 @@ onMount(()=>{
 				</div>
 				<p class="projectDesc">
 					{`티스토리를 사용하던 중, 자기만의 블로그를 만들어 깔끔한 디자인을 적용하면서도 최초 로딩속도를 매우 빠르게 만들어 보고자 했습니다.`}
-					{`\n후보를 찾아보던중 비교적 최근 발표된 React 18의 RSC / RCC에 흥미가 생겨 Next.js 를 통해 RSC와 RCC, SSR을 이용하여 블로그를 제작하기로 결정하였습니다.\n`}
+					{`\n후보를 찾아보던중 비교적 최근 발표된 React 19의 RSC / RCC에 흥미가 생겨 Next.js 를 통해 RSC와 RCC, SSR을 이용하여 블로그를 제작하기로 결정하였습니다.\n`}
 					{`\nRSC를 적극적으로 도입해 향후 React의 방향성에 대해 알아볼 수 있었고 만족스러운 초기 로딩속도와 디자인을 제작할 수 있었습니다.`}
 				</p>
 				<ul>
 					<li>Nest.js와 Java Spring 을 모두 사용해보는 기회가 되었습니다.</li>
 					<li>Nest.js에서 ORM을 사용하여 DB를 생성하였습니다.</li>
-					<li>Next 14 / React 18 버전의 RSC와 RCC그리고 SSR을 적절하게 사용하여 개발하였습니다.</li>
+					<li>Next 14 / React 19 버전의 RSC와 RCC그리고 SSR을 적절하게 사용하여 개발하였습니다.</li>
 					<li>깔끔한 디자인과 빠른 속도를 핵심 가치로 목표하고 개발하였습니다.</li>
 				</ul>
+				<p class="projectLinkTitle">더 알아보기</p>
+				<div class="projectLink">
+					<a href="https://blog.silvercherry.io" target="_blank"><div><Icon IconName="Link" className="SmallIconStyle" fill="#000000" />블로그 바로가기</div></a>
+					<a href="https://github.com/skrksbry/kirsiblog" target="_blank"><div><Icon IconName="Link" className="SmallIconStyle" fill="#000000" /><StackIcon IconName={"Github"} className="stackIcon" fill={"#000"}/>Github</div></a>
+					<a href="https://github.com/skrksbry/kirsiblog" target="_blank"><div><Icon IconName="Link" className="SmallIconStyle" fill="#000000" /><KirsiBlogLogo />블로그 제작기</div></a>
+				</div>
 			</div>
 		</div>
 		<div class="projectBox">
@@ -330,6 +336,10 @@ onMount(()=>{
 					<li>Jenkins CI/CD 도입을 주도하여 작업하였으며, AWS EC2 인스턴스 최적화 및 이중화 작업을 수행했습니다.</li>
 					<li>Next.js 를 이용해 서비스의 신규 기능개발 및 기존 기능 고도화 작업을 진행했습니다.</li>
 				</ul>
+				<p class="projectLinkTitle">더 알아보기</p>
+				<div class="projectLink">
+					<a href="https://satella.co.kr/" target="_blank"><div><Icon IconName="Link" className="SmallIconStyle" fill="#000000" />Satella</div></a>
+				</div>
 			</div>
 		</div>
 		<div class="projectBox">
@@ -357,6 +367,10 @@ onMount(()=>{
 					<li>UX에 관심을 가지고 고객 동향을 모니터링하여 UX 개선을 통해 불만을 크게 줄였습니다 (사용점주 포함).</li>
 					<li>온-프레미스 환경에서 클라우드 서비스인 OCI ( Oracle Cloud ) 로 전환을 통해 물리적 사고 위험을 낮추고 고가용성을 확보했습니다.</li>
 				</ul>
+				<p class="projectLinkTitle">더 알아보기</p>
+				<div class="projectLink">
+					<a href="https://ritto.kr/" target="_blank"><div><Icon IconName="Link" className="SmallIconStyle" fill="#000000" />RITTO</div></a>
+				</div>
 			</div>
 		</div>
 		<div class="projectBox">
@@ -383,6 +397,10 @@ onMount(()=>{
 					<li>Grpc 도입을 통해 통신 오버헤드를 50% 이상 감소시키고 MCU와 직접 통신하며 발생하는 문제를 해결하였습니다.</li>
 					<li>Redis 도입을 통해 발생한 주문을 캐싱하여 DB 쿼리량을 크게 감소시켜 DB 부하 및 비용을 30% 이상 감소시켰습니다.</li>
 				</ul>
+				<p class="projectLinkTitle">더 알아보기</p>
+				<div class="projectLink">
+					<a href="https://ritto.kr/" target="_blank"><div><Icon IconName="Link" className="SmallIconStyle" fill="#000000" />RITTO</div></a>
+				</div>
 			</div>
 		</div>
 		<div class="projectBox">
