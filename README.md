@@ -1,38 +1,19 @@
-# create-svelte
+# Svelte Portfolio Project
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+This project is a simple portfolio project using Svelte.
 
-## Creating a project
+I have written only the necessary parts as simply and clearly as possible.
 
-If you're seeing this, you've probably already done this step. Congrats!
+please visit blog for more information. ( Korean ) [`blog`](https://blog.silvercherry.io/).
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+자세한 정보가 필요하면 블로그를 통해 확인해주세요. [`blog`](https://blog.silvercherry.io/).
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Project setup
 
 ```bash
-npm run dev
+# Install package (recommended)
+yarn install
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+# If you want to use npm
+npm install
 ```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
