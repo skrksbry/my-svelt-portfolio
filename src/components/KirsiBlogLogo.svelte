@@ -7,7 +7,7 @@
         justify-content: center;
         width: 24px;
         height: 24px;
-        background-color: #eb7575;
+        background-color: #eb7575 !important;
         font-size: 24px;
         font-weight: 900;
         color: #000;
