@@ -65,10 +65,10 @@ body {
 	flex-wrap: wrap;
 }
 .profileImage {
-	width: 120px;
-	height: 120px;
+	width: 150px;
+	height: 150px;
 	border-radius: 200px;
-	background-color: gray;
+	overflow: hidden;
 }
 .profileBox {
 	display: flex;
