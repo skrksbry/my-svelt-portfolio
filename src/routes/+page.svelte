@@ -146,7 +146,7 @@ onMount(()=>{
 			<div class="title-tile-1" class:title-tile-action={itemVisible[0]} /><h1 style="font-size: 46px">INFORMATION</h1>
 		</div>
 		<div class="nameTagBox">
-			<div class="profileImage"></div>
+			<div class="profileImage"><img src="/mypic.jpg" style="width: 100%" alt="RITTO 로고" /></div>
 			<div class="profileBox">
 				<p class="name">고재현</p>
 				<p class="birthday">1995. 10. 07</p>
@@ -221,7 +221,7 @@ onMount(()=>{
 				<li>키오스크 / 지점 관리용 백 오피스 개발</li>
 				<li>키오스크및 백오피스와 하드웨어 네트워크 통합</li>
 			</ul>
-			<p>서비스 백엔드 및 DB 개발업무</p>
+			<p>서비스 백엔드 및 DB 개발 업무</p>
 			<ul>
 				<li>Node.js 기반 백엔드 ( RESTful / TCP Socket ) 개발</li>
 				<li>전체 서비스 RDBMS 설계 및 운용</li>
@@ -237,7 +237,7 @@ onMount(()=>{
 			<p class="careerCompanyDate">2023년 8월 05일 ~ 2024년 05월 08일 ( 9개월 )</p>
 			<p>웹 서비스 개발</p>
 			<ul>
-				<li>Satella 서비스 신규개발 및 유지보수 업무</li>
+				<li>Satella 서비스 신규 개발 및 유지보수 업무</li>
 			</ul>
 			<p>인프라 관리 및 최적화</p>
 			<ul>
@@ -263,9 +263,10 @@ onMount(()=>{
 					<SkillComponent stackName="Vercel" stackIconName="Vercel" stackColor="#666666" styleTheme="project"/>
 					<SkillComponent stackName="CloudFlare" stackIconName="CloudFlare" stackColor="#F38020" styleTheme="project"/>
 				</div>
+				<p class="projectDate">2024-03 ~ </p>
 				<p class="projectDesc">
-					{`포트폴리오를 문서로 관리하고 있었지만 이번에는 웹에 공개해보자는 목적에서 시작했습니다.`}
-					{`\n포트폴리오 서비스는 작고 가볍기 때문에 최근 관심있게 알아보던 Svelte를 적극적으로 사용하였습니다.`}
+					{`포트폴리오를 문서로 관리하고 있었지만 이번에는 웹에 공개해 보자는 목적에서 시작했습니다.`}
+					{`\n포트폴리오 서비스는 작고 가볍기 때문에 최근 관심 있게 알아보던 Svelte를 적극적으로 사용하였습니다.`}
 					{`\n또한 정적 페이지인 만큼 Vercel을 통해 배포하고 CloudFlare Proxy를 적용하였습니다.`}
 				</p>
 				<ul>
@@ -275,7 +276,7 @@ onMount(()=>{
 				<p class="projectLinkTitle"><Icon IconName="Link" className="SmallIconStyle" fill="#000000" />더 알아보기</p>
 				<div class="projectLink">
 					<a href="https://github.com/skrksbry/my-svelt-portfolio" target="_blank"><div><StackIcon IconName={"Github"} className="stackIcon" fill={"#000"}/>Github</div></a>
-					<a href="https://github.com/skrksbry/my-svelt-portfolio" target="_blank"><div><KirsiBlogLogo />포트폴리오 웹 사이트 제작기</div></a>
+					<a href="https://blog.silvercherry.io/view/17" target="_blank"><div><KirsiBlogLogo />포트폴리오 웹 사이트 제작기</div></a>
 				</div>
 			</div>
 		</div>
@@ -296,13 +297,15 @@ onMount(()=>{
 					<SkillComponent stackName="TailwindCSS" stackIconName="TailwindCss" stackColor="#06B6D4" styleTheme="project"/>
 					<SkillComponent stackName="CloudFlare" stackIconName="CloudFlare" stackColor="#F38020" styleTheme="project"/>
 				</div>
+				<p class="projectDate">2024-02 ~ </p>
 				<p class="projectDesc">
-					{`티스토리를 사용하던 중, 자기만의 블로그를 만들어 깔끔한 디자인을 적용하면서도 최초 로딩속도를 매우 빠르게 만들어 보고자 했습니다.`}
-					{`\n후보를 찾아보던중 비교적 최근 발표된 React 19의 RSC / RCC에 흥미가 생겨 Next.js 를 통해 RSC와 RCC, SSR을 이용하여 블로그를 제작하기로 결정하였습니다.\n`}
+					{`네이버 블로그를 사용하던 중, 자기만의 블로그를 만들어 깔끔한 디자인을 적용하면서도 최초 로딩속도를 매우 빠르게 만들어 보고자 했습니다.`}
+					{`\n후보를 찾아보던 중 비교적 최근 발표된 React 19의 RSC에 흥미가 생겨 Next.js 를 통해 RSC와 SSR을 이용하여 블로그를 제작하기로 결정하였습니다.\n`}
 					{`\nRSC를 적극적으로 도입해 향후 React의 방향성에 대해 알아볼 수 있었고 만족스러운 초기 로딩속도와 디자인을 제작할 수 있었습니다.`}
+					{`\n최적화를 통해 높은 Lighthouse 점수를 달성하였으며, 이후 추가적인 개발에도 점수를 유지할 계획입니다.`}
 				</p>
 				<ul>
-					<li>Nest.js와 Java Spring 을 모두 사용해보는 기회가 되었습니다.</li>
+					<li>Nest.js와 Java Spring 을 모두 사용해 보는 기회가 되었습니다.</li>
 					<li>Nest.js에서 ORM을 사용하여 DB를 생성하였습니다.</li>
 					<li>Next 14 / React 19 버전의 RSC와 RCC그리고 SSR을 적절하게 사용하여 개발하였습니다.</li>
 					<li>깔끔한 디자인과 빠른 속도를 핵심 가치로 목표하고 개발하였습니다.</li>
@@ -311,7 +314,8 @@ onMount(()=>{
 				<div class="projectLink">
 					<a href="https://blog.silvercherry.io" target="_blank"><div><Icon IconName="Link" className="SmallIconStyle" fill="#000000" />블로그 바로가기</div></a>
 					<a href="https://github.com/skrksbry/kirsiblog" target="_blank"><div><StackIcon IconName={"Github"} className="stackIcon" fill={"#000"}/>Github</div></a>
-					<a href="https://github.com/skrksbry/kirsiblog" target="_blank"><div><KirsiBlogLogo />블로그 제작기</div></a>
+					<a href="https://blog.silvercherry.io/view/22" target="_blank"><div><KirsiBlogLogo />개인 블로그 서비스 만들기</div></a>
+					<a href="https://blog.silvercherry.io/view/23" target="_blank"><div><KirsiBlogLogo />블로그 서비스 최적화하기</div></a>
 				</div>
 			</div>
 		</div>
@@ -329,8 +333,9 @@ onMount(()=>{
 					<SkillComponent stackName="ReactQuery" stackIconName="ReactQuery" stackColor="#FF4154" styleTheme="project"/>
 					<SkillComponent stackName="Recoil" stackIconName="Recoil" stackColor="#3578E5" styleTheme="project"/>
 				</div>
+				<p class="projectDate">2023-08 ~ </p>
 				<p class="projectDesc">
-					{`(주)씨에스에스에서 개발한 서브컬쳐 플렛폼입니다.`}
+					{`(주)씨에스에스에서 개발한 서브컬쳐 플랫폼입니다.`}
 				</p>
 				<ul>
 					<li>Jenkins CI/CD 도입을 주도하여 작업하였으며, AWS EC2 인스턴스 최적화 및 이중화 작업을 수행했습니다.</li>
@@ -339,6 +344,7 @@ onMount(()=>{
 				<p class="projectLinkTitle"><Icon IconName="Link" className="SmallIconStyle" fill="#000000" />더 알아보기</p>
 				<div class="projectLink">
 					<a href="https://satella.co.kr/" target="_blank"><div><Icon IconName="Link" className="SmallIconStyle" fill="#000000" />Satella</div></a>
+					<a href="https://blog.silvercherry.io/view/15" target="_blank"><div><KirsiBlogLogo />Jenkins와 Docker로 CI/CD 전환하기</div></a>
 				</div>
 			</div>
 		</div>
@@ -358,18 +364,20 @@ onMount(()=>{
 					<SkillComponent stackName="Electron" stackIconName="Electron" stackColor="#47848F" styleTheme="project"/>
 					<SkillComponent stackName="Socket.io" stackIconName="SocketIo" stackColor="#666666" styleTheme="project"/>
 				</div>
+				<p class="projectDate">2021-03 ~ 2023-08</p>
 				<p class="projectDesc">
 					{`(주)아이에스컴퍼니 에서 개발한 키오스크 서비스 및 백오피스입니다.`}
 				</p>
 				<ul>
 					<li>Electron을 사용해 React / Next.js웹 앱을 어플리케이션형태로 배포하였습니다.</li>
-					<li>키오스크와 백엔드 서버간 Websocket을 통해 실시간 업데이트를 구현하였습니다.</li>
-					<li>UX에 관심을 가지고 고객 동향을 모니터링하여 UX 개선을 통해 불만을 크게 줄였습니다 (사용점주 포함).</li>
+					<li>키오스크와 백엔드 서버 간 Websocket을 통해 실시간 업데이트를 구현하였습니다.</li>
+					<li>UX에 관심을 가지고 고객 동향을 모니터링하여 UX 개선을 통해 불만을 크게 줄였습니다 ( 사용 점주 포함 ).</li>
 					<li>온-프레미스 환경에서 클라우드 서비스인 OCI ( Oracle Cloud ) 로 전환을 통해 물리적 사고 위험을 낮추고 고가용성을 확보했습니다.</li>
 				</ul>
 				<p class="projectLinkTitle"><Icon IconName="Link" className="SmallIconStyle" fill="#000000" />더 알아보기</p>
 				<div class="projectLink">
 					<a href="https://ritto.kr/" target="_blank"><div><Icon IconName="Link" className="SmallIconStyle" fill="#000000" />RITTO</div></a>
+					<a href="https://blog.silvercherry.io/view/15" target="_blank"><div><KirsiBlogLogo />gRPC 도입을 통한 플랫폼 통합 및 성능 향상시키기</div></a>
 				</div>
 			</div>
 		</div>
@@ -387,6 +395,7 @@ onMount(()=>{
 					<SkillComponent stackName="Grpc" stackIconName="Grpc" stackColor="#666666" styleTheme="project"/>
 					<SkillComponent stackName="Redis" stackIconName="Redis" stackColor="#DC382D" styleTheme="project"/>
 				</div>
+				<p class="projectDate">2021-03 ~ 2023-08</p>
 				<p class="projectDesc">
 					{`(주)아이에스컴퍼니 에서 개발한 모든 주문 관련 서비스의 통합 백엔드 프로젝트 입니다.`}
 				</p>
@@ -400,6 +409,7 @@ onMount(()=>{
 				<p class="projectLinkTitle"><Icon IconName="Link" className="SmallIconStyle" fill="#000000" />더 알아보기</p>
 				<div class="projectLink">
 					<a href="https://ritto.kr/" target="_blank"><div><Icon IconName="Link" className="SmallIconStyle" fill="#000000" />RITTO</div></a>
+					<a href="https://blog.silvercherry.io/view/15" target="_blank"><div><KirsiBlogLogo />gRPC 도입을 통한 플랫폼 통합 및 성능 향상시키기</div></a>
 				</div>
 			</div>
 		</div>
@@ -416,6 +426,7 @@ onMount(()=>{
 					<SkillComponent stackName="CentOS" stackIconName="CentOs" stackColor="#262577" styleTheme="project"/>
 					<SkillComponent stackName="Apache" stackIconName="Apache" stackColor="#D22128" styleTheme="project"/>
 				</div>
+				<p class="projectDate">2017-07 ~ 2018-02</p>
 				<p class="projectDesc">
 					{`소녀전선이라는 게임의 DB 사이트입니다, 당시 정보를 찾아볼 수 있는 사이트가 없어 군 복무중 개발하였습니다.\n`}
 					{`N54L 이라는 AMD 저전력 32bit 듀얼코어 프로세서에서 20000페이지 뷰라는 접속량 발생으로 인해 처음으로 Redis 도입을 진행한 프로젝트입니다.\n`}
